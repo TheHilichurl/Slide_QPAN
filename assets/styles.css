@@ -320,6 +320,108 @@ html, body {
 }
 
 /* ==========================================================================
+   COBALT BLUE FOOTER (Slides 2-8 & 9)
+   Brand Accent: Imperial / Cobalt Blue #003B7A with Vibrant Orange #FB923C & White #FFFFFF
+   ========================================================================== */
+#slide-2 .slide-footer,
+#slide-3 .slide-footer,
+#slide-4 .slide-footer,
+#slide-5 .slide-footer,
+#slide-6 .slide-footer,
+#slide-7 .slide-footer,
+#slide-8 .slide-footer,
+#slide-9 .slide-footer {
+  background: #003B7A !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 -4px 20px rgba(0, 59, 122, 0.4) !important;
+}
+
+#slide-2 .slide-footer .footer-center,
+#slide-3 .slide-footer .footer-center,
+#slide-4 .slide-footer .footer-center,
+#slide-5 .slide-footer .footer-center,
+#slide-6 .slide-footer .footer-center,
+#slide-7 .slide-footer .footer-center,
+#slide-8 .slide-footer .footer-center,
+#slide-9 .slide-footer .footer-center {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+#slide-2 .slide-footer .footer-meta-pill,
+#slide-3 .slide-footer .footer-meta-pill,
+#slide-4 .slide-footer .footer-meta-pill,
+#slide-5 .slide-footer .footer-meta-pill,
+#slide-6 .slide-footer .footer-meta-pill,
+#slide-7 .slide-footer .footer-meta-pill,
+#slide-8 .slide-footer .footer-meta-pill,
+#slide-9 .slide-footer .footer-meta-pill {
+  color: #FB923C !important;
+  font-weight: 800 !important;
+}
+
+#slide-2 .slide-footer .footer-timer-display,
+#slide-3 .slide-footer .footer-timer-display,
+#slide-4 .slide-footer .footer-timer-display,
+#slide-5 .slide-footer .footer-timer-display,
+#slide-6 .slide-footer .footer-timer-display,
+#slide-7 .slide-footer .footer-timer-display,
+#slide-8 .slide-footer .footer-timer-display,
+#slide-9 .slide-footer .footer-timer-display {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+#slide-2 .slide-footer .footer-dnu-link,
+#slide-3 .slide-footer .footer-dnu-link,
+#slide-4 .slide-footer .footer-dnu-link,
+#slide-5 .slide-footer .footer-dnu-link,
+#slide-6 .slide-footer .footer-dnu-link,
+#slide-7 .slide-footer .footer-dnu-link,
+#slide-8 .slide-footer .footer-dnu-link,
+#slide-9 .slide-footer .footer-dnu-link {
+  color: #FB923C !important;
+  font-weight: 800 !important;
+}
+
+#slide-2 .slide-footer .footer-dnu-link:hover,
+#slide-3 .slide-footer .footer-dnu-link:hover,
+#slide-4 .slide-footer .footer-dnu-link:hover,
+#slide-5 .slide-footer .footer-dnu-link:hover,
+#slide-6 .slide-footer .footer-dnu-link:hover,
+#slide-7 .slide-footer .footer-dnu-link:hover,
+#slide-8 .slide-footer .footer-dnu-link:hover,
+#slide-9 .slide-footer .footer-dnu-link:hover {
+  color: #FED7AA !important;
+}
+
+#slide-2 .slide-footer .slide-counter,
+#slide-3 .slide-footer .slide-counter,
+#slide-4 .slide-footer .slide-counter,
+#slide-5 .slide-footer .slide-counter,
+#slide-6 .slide-footer .slide-counter,
+#slide-7 .slide-footer .slide-counter,
+#slide-8 .slide-footer .slide-counter,
+#slide-9 .slide-footer .slide-counter {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+#slide-2 .slide-footer .slide-counter .current-num,
+#slide-3 .slide-footer .slide-counter .current-num,
+#slide-4 .slide-footer .slide-counter .current-num,
+#slide-5 .slide-footer .slide-counter .current-num,
+#slide-6 .slide-footer .slide-counter .current-num,
+#slide-7 .slide-footer .slide-counter .current-num,
+#slide-8 .slide-footer .slide-counter .current-num,
+#slide-9 .slide-footer .slide-counter .current-num {
+  color: #FB923C !important;
+}
+
+/* ==========================================================================
    SLIDE BODY & PROJECTION-OPTIMIZED 30PX TYPOGRAPHY
    ========================================================================== */
 .slide-body {

@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GDQP-AN: Chiến Lược Diễn Biến Hòa Bình & Bạo Loạn Lật Đổ | Đại Học Đại Nam</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20261002_02">
 
   <!-- Google Fonts: Plus Jakarta Sans (Modern Headings) & Be Vietnam Pro (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
 
   <!-- External CDN Libraries -->
   <!-- Lucide Icons -->
@@ -21,8 +21,8 @@
   <!-- jsPDF for High-Fidelity 2K PDF Packaging -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-  <!-- External Stylesheet -->
-  <link rel="stylesheet" href="assets/styles.css">
+  <!-- External Stylesheet with Cache-Buster -->
+  <link rel="stylesheet" href="assets/styles.css?v=20261002_02">
 </head>
 <body>
 
@@ -1823,6 +1823,11 @@
         showToast("Chào mừng đến bài thuyết trình GDQP-AN • Đại học Đại Nam!");
       }, 1000);
     });
+
+    window.addEventListener('load', updateStageScale);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(updateStageScale);
+    }
   </script>
 </body>
 </html>
