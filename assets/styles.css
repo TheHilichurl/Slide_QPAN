@@ -770,17 +770,21 @@ html, body {
   justify-content: center;
 }
 
+#slide-3 .slide-category { font-size: 18px; }
+#slide-3 .slide-title { font-size: 53px; }
+#slide-3 .slide-subtitle { font-size: 26px; }
+
 .pillar-title {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 29px;
   font-weight: 900;
   color: var(--color-secondary);
 }
 
 .pillar-tag {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 900;
-  padding: 3px 12px;
+  padding: 4px 14px;
   border-radius: var(--radius-full);
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -795,8 +799,8 @@ html, body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 28px;
+  gap: 8px;
+  font-size: 34px;
   color: #1E293B;
   line-height: 1.35;
 }
@@ -804,8 +808,8 @@ html, body {
 .pillar-bullets li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 28px;
+  gap: 12px;
+  font-size: 34px;
 }
 
 .bullet-dot {
@@ -892,17 +896,25 @@ html, body {
   border-bottom: 1px solid var(--color-border);
 }
 
+#slide-4 .slide-category { font-size: 18px; }
+#slide-4 .slide-title { font-size: 53px; }
+#slide-4 .slide-subtitle { font-size: 29px; }
+
 .alert-title-wrap h3 {
   font-family: var(--font-heading);
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 900;
+}
+
+.alert-title-wrap span {
+  font-size: 20px !important;
 }
 
 .dbhb-card .alert-title-wrap h3 { color: var(--color-secondary); }
 .blld-card .alert-title-wrap h3 { color: var(--color-accent-crimson); }
 
 .alert-badge {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   padding: 5px 14px;
   border-radius: var(--radius-full);
@@ -997,15 +1009,19 @@ html, body {
 .banner-red { background: linear-gradient(135deg, #991B1B, #DC2626); }
 .banner-orange { background: linear-gradient(135deg, #C2410C, #EA580C); }
 
+#slide-5 .slide-category { font-size: 17px; }
+#slide-5 .slide-title { font-size: 48px; }
+#slide-5 .slide-subtitle { font-size: 24px; }
+
 .col-header-text h3 {
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: 31px;
   font-weight: 900;
   line-height: 1.2;
 }
 
 .col-header-text span {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   opacity: 0.9;
   text-transform: uppercase;
@@ -1021,7 +1037,7 @@ html, body {
 }
 
 .col-section h5 {
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -1030,7 +1046,7 @@ html, body {
 }
 
 .col-section p {
-  font-size: 31px;
+  font-size: 34px;
   color: #1E293B;
   line-height: 1.35;
 }
@@ -1090,8 +1106,8 @@ html, body {
   color: #FFFFFF;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 15px;
-  padding: 3px 12px;
+  font-size: 17px;
+  padding: 4px 14px;
   border-radius: var(--radius-full);
 }
 
@@ -1107,7 +1123,7 @@ html, body {
 
 .step-card-header h4 {
   font-family: var(--font-heading);
-  font-size: 25px;
+  font-size: 29px;
   font-weight: 900;
   color: var(--color-secondary);
   margin-top: 3px;
@@ -1115,7 +1131,7 @@ html, body {
 }
 
 .step-card-header span {
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 800;
   color: var(--color-primary);
   text-transform: uppercase;
@@ -1123,7 +1139,7 @@ html, body {
 }
 
 .flow-step-card p {
-  font-size: 26px;
+  font-size: 30px;
   color: #1E293B;
   line-height: 1.35;
   margin-top: 4px;
@@ -1432,6 +1448,10 @@ html, body {
   border-color: var(--color-primary);
 }
 
+#slide-8 .slide-category { font-size: 17px; }
+#slide-8 .slide-title { font-size: 48px; }
+#slide-8 .slide-subtitle { font-size: 24px; }
+
 .pillar-badge-num {
   position: absolute;
   top: -14px;
@@ -1442,7 +1462,7 @@ html, body {
   border-radius: var(--radius-full);
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.8px;
   box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
 }
@@ -1462,7 +1482,7 @@ html, body {
 
 .pillar-column h3 {
   font-family: var(--font-heading);
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 900;
   color: var(--color-secondary);
   margin-bottom: 12px;
@@ -1474,7 +1494,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-size: 28px;
+  font-size: 31px;
   color: #1E293B;
   line-height: 1.35;
 }
@@ -1483,7 +1503,7 @@ html, body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 28px;
+  font-size: 31px;
 }
 
 .check-icon {
@@ -1495,6 +1515,10 @@ html, body {
 /* ==========================================================================
    SLIDE 9: 2x2 ACTION MATRIX (30PX TEXT)
    ========================================================================== */
+#slide-9 .slide-category { font-size: 17px; }
+#slide-9 .slide-title { font-size: 48px; }
+#slide-9 .slide-subtitle { font-size: 24px; }
+
 .slide-9-matrix {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1546,7 +1570,7 @@ html, body {
 
 .matrix-title {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 900;
   color: var(--color-secondary);
 }
@@ -1556,7 +1580,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  font-size: 26px;
+  font-size: 29px;
   color: #1E293B;
   line-height: 1.35;
 }
@@ -1565,7 +1589,7 @@ html, body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 26px;
+  font-size: 29px;
 }
 
 /* ==========================================================================
