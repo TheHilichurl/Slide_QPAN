@@ -1583,20 +1583,20 @@ html, body {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-left: 8px solid var(--color-primary);
   border-radius: var(--radius-lg);
-  padding: 22px 32px;
+  padding: 24px 34px;
   backdrop-filter: blur(14px);
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 36px;
 }
 
 .quote-img-box {
-  width: 476px;
-  height: 240px;
+  width: 760px;
+  height: 310px;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 2.5px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   flex-shrink: 0;
 }
 
@@ -1611,12 +1611,13 @@ html, body {
 .quote-text-wrap {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  flex: 1;
 }
 
 .quote-text-wrap blockquote {
   font-family: var(--font-heading);
-  font-size: 38px;
+  font-size: 48px;
   font-weight: 800;
   color: #FFFFFF;
   line-height: 1.35;
@@ -1626,7 +1627,7 @@ html, body {
 
 .quote-text-wrap cite {
   display: block;
-  font-size: 26px;
+  font-size: 32px;
   color: #FDBA74;
   font-weight: 800;
   font-style: normal;
@@ -1655,17 +1656,17 @@ html, body {
 
 .conclusion-card h4 {
   font-family: var(--font-heading);
-  font-size: 23px;
+  font-size: 28px;
   font-weight: 900;
   color: #FB923C;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .conclusion-card p {
-  font-size: 28px;
+  font-size: 32px;
   color: #E2E8F0;
   line-height: 1.35;
 }
@@ -1683,14 +1684,14 @@ html, body {
 
 .qa-invite h4 {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 900;
   color: #FFFFFF;
   letter-spacing: 0.5px;
 }
 
 .qa-invite p {
-  font-size: 26px;
+  font-size: 28px;
   color: #CBD5E1;
   margin-top: 2px;
 }
