@@ -999,13 +999,13 @@ html, body {
 
 .col-header-text h3 {
   font-family: var(--font-heading);
-  font-size: 23px;
+  font-size: 28px;
   font-weight: 900;
   line-height: 1.2;
 }
 
 .col-header-text span {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   opacity: 0.9;
   text-transform: uppercase;
@@ -1016,21 +1016,21 @@ html, body {
   padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   flex: 1;
 }
 
 .col-section h5 {
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--color-primary);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .col-section p {
-  font-size: 26px;
+  font-size: 31px;
   color: #1E293B;
   line-height: 1.35;
 }
@@ -1090,7 +1090,7 @@ html, body {
   color: #FFFFFF;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 13px;
+  font-size: 15px;
   padding: 3px 12px;
   border-radius: var(--radius-full);
 }
@@ -1107,7 +1107,7 @@ html, body {
 
 .step-card-header h4 {
   font-family: var(--font-heading);
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 900;
   color: var(--color-secondary);
   margin-top: 3px;
@@ -1115,7 +1115,7 @@ html, body {
 }
 
 .step-card-header span {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 800;
   color: var(--color-primary);
   text-transform: uppercase;
@@ -1123,7 +1123,7 @@ html, body {
 }
 
 .flow-step-card p {
-  font-size: 22px;
+  font-size: 26px;
   color: #1E293B;
   line-height: 1.35;
   margin-top: 4px;
@@ -1161,14 +1161,14 @@ html, body {
 
 .synthesis-text h4 {
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 900;
   color: var(--color-secondary);
   margin-bottom: 2px;
 }
 
 .synthesis-text p {
-  font-size: 25px;
+  font-size: 28px;
   color: #0F172A;
   font-weight: 600;
   line-height: 1.35;
@@ -1591,12 +1591,12 @@ html, body {
 }
 
 .quote-img-box {
-  width: 280px;
-  height: 175px;
+  width: 476px;
+  height: 240px;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 2.5px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   flex-shrink: 0;
 }
 
@@ -1611,12 +1611,12 @@ html, body {
 .quote-text-wrap {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .quote-text-wrap blockquote {
   font-family: var(--font-heading);
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 800;
   color: #FFFFFF;
   line-height: 1.35;
@@ -1626,7 +1626,7 @@ html, body {
 
 .quote-text-wrap cite {
   display: block;
-  font-size: 22px;
+  font-size: 26px;
   color: #FDBA74;
   font-weight: 800;
   font-style: normal;
