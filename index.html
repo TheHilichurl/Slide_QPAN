@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDQP-AN: Chiến Lược Diễn Biến Hòa Bình & Bạo Loạn Lật Đổ | Đại Học Đại Nam</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans (Modern Headings) & Be Vietnam Pro (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+
+  <!-- External CDN Libraries -->
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- PptxGenJS (Native Editable PPTX Generator) -->
+  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+  <!-- html2canvas for 2K Canvas Screenshot Capture -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- jsPDF for High-Fidelity 2K PDF Packaging -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- Top Progress Indicator -->
+  <div id="top-progress-bar"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-notification">
+    <i data-lucide="check-circle" style="color: #10B981; width: 26px; height: 26px; flex-shrink: 0;"></i>
+    <span id="toast-msg">Thông báo hệ thống</span>
+  </div>
+
+  <!-- Viewport Shell -->
+  <div id="viewport">
+    <div id="slide-stage">
+
+      <!-- ====================================================================
+           SLIDE 1: COVER / INTRO (HERO LAYOUT WITH AUTHENTIC VIETNAM MILITARY PARADE)
+           ==================================================================== -->
+      <section class="slide theme-dark active" id="slide-1" data-slide-index="1">
+        <!-- Mandatory Header -->
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">
+              <i data-lucide="shield-check" style="width: 18px; height: 18px;"></i>
+              GDQP-AN • BỘ MÔN QUÂN SỰ
+            </div>
+          </div>
+          <div class="header-right">
+            <!-- Official Dai Nam University Logo -->
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <!-- Slide Body -->
+        <div class="slide-body" style="background: radial-gradient(circle at 75% 35%, #0B254E 0%, #050F22 100%);">
+          <div class="slide-1-container">
+            <div class="hero-content">
+              <div class="hero-badge-tag">
+                <i data-lucide="flame" style="width: 18px; height: 18px;"></i>
+                CHUYÊN ĐỀ BÁO CÁO THUYẾT TRÌNH TRỌNG ĐIỂM
+              </div>
+
+              <h1 class="hero-main-title">
+                CHIẾN LƯỢC <span class="highlight-orange">"DIỄN BIẾN HÒA BÌNH"</span><br>
+                & BẠO LOẠN LẬT ĐỔ
+              </h1>
+
+              <p class="hero-sub-text">
+                Bản chất, mối quan hệ biện chứng và sứ mệnh - trách nhiệm của thế hệ sinh viên Đại học Đại Nam.
+              </p>
+
+              <div class="hero-meta-grid">
+                <div class="hero-meta-card">
+                  <div class="meta-card-icon">
+                    <i data-lucide="users" style="width: 26px; height: 26px;"></i>
+                  </div>
+                  <div class="meta-card-content">
+                    <h5>Đơn vị báo cáo</h5>
+                    <p>Nhóm 1 • Tiểu đội 1 • Trung đội 1</p>
+                  </div>
+                </div>
+
+                <div class="hero-meta-card">
+                  <div class="meta-card-icon" style="background: #003B7A;">
+                    <i data-lucide="award" style="width: 26px; height: 26px;"></i>
+                  </div>
+                  <div class="meta-card-content">
+                    <h5>Biên chế & Học phần</h5>
+                    <p>Đại đội 6 • Môn: GDQP-AN</p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="hero-cta-btn" id="btn-start-presentation" onclick="goToSlide(2)">
+                <span>Bắt đầu Thuyết trình</span>
+                <i data-lucide="arrow-right" style="width: 24px; height: 24px;"></i>
+              </button>
+            </div>
+
+            <!-- Hero Visual Graphic Card (Authentic Vietnam Military Parade at Ba Dinh) -->
+            <div class="hero-visual-card">
+              <img src="assets/vn-military-parade.jpg" alt="Duyệt binh Quân đội Nhân dân Việt Nam" class="hero-visual-img">
+              <div class="hero-visual-overlay">
+                <div class="visual-overlay-badge">
+                  <i data-lucide="shield" style="width: 16px; height: 16px;"></i>
+                  QUỐC PHÒNG TOÀN DÂN - AN NINH NHÂN DÂN
+                </div>
+                <h3 style="color: #FFFFFF; font-size: 26px; font-weight: 900; line-height: 1.3;">
+                  Quân đội Nhân dân Việt Nam Anh Hùng
+                </h3>
+                <p style="color: #CBD5E1; font-size: 18px; margin-top: 6px; line-height: 1.45;">
+                  Kiên quyết đập tan mọi âm mưu "Diễn biến hòa bình" và bạo loạn lật đổ, bảo vệ vững chắc Tổ quốc Việt Nam XHCN.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mandatory Footer -->
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display">
+              <i data-lucide="clock" style="width: 18px; height: 18px;"></i>
+              <span class="timer-text">00:00</span>
+            </div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link">
+              <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
+              dainam.edu.vn
+            </a>
+          </div>
+          <div class="footer-center">
+            <span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN
+          </div>
+          <div class="footer-right">
+            <div class="slide-counter"><span class="current-num">01</span> / 10</div>
+          </div>
+        </footer>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 2: KHÁI NIỆM DBHB (2-COLUMN SPLIT WITH BA DINH HISTORIC PHOTO)
+           ==================================================================== -->
+      <section class="slide" id="slide-2" data-slide-index="2">
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">PHẦN I: LÝ LUẬN CĂN BẢN</div>
+          </div>
+          <div class="header-right">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <div class="slide-body">
+          <div class="slide-title-wrap">
+            <span class="slide-category">
+              <i data-lucide="book-open" style="width: 18px; height: 18px;"></i>
+              Khái niệm & Bản chất khoa học
+            </span>
+            <h2 class="slide-title">CHIẾN LƯỢC "DIỄN BIẾN HÒA BÌNH" LÀ GÌ?</h2>
+            <p class="slide-subtitle">Phương thức tiến công phi quân sự nhằm lật đổ chế độ XHCN từ bên trong</p>
+          </div>
+
+          <div class="slide-2-grid">
+            <!-- Left: Definition Box with Vietnam Ba Dinh Photo -->
+            <div class="definition-box">
+              <div>
+                <div class="def-badge">
+                  <i data-lucide="alert-octagon" style="width: 18px; height: 18px;"></i>
+                  Định nghĩa khoa học quân sự
+                </div>
+                <p class="def-quote-text">
+                  "<strong>'Diễn biến hòa bình'</strong> là chiến lược của chủ nghĩa đế quốc và thế lực phản động nhằm <strong>lật đổ chế độ chính trị</strong> các nước XHCN từ bên trong, chủ yếu bằng các <strong>biện pháp phi quân sự</strong>."
+                </p>
+
+                <!-- Authentic Vietnam Context Photo -->
+                <div class="def-img-preview">
+                  <img src="assets/vn-ba-dinh.jpg" alt="Quảng trường Ba Đình Hà Nội" class="def-img-thumb">
+                  <div class="def-img-caption">
+                    <h5>Quảng trường Ba Đình - Trái tim của Tổ quốc</h5>
+                    <p>Bảo vệ vững chắc nền tảng tư tưởng và thể chế chính trị trước các đợt tiến công thâm độc.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="def-summary-pill">
+                <i data-lucide="zap" style="color: var(--color-primary); width: 28px; height: 28px; flex-shrink: 0;"></i>
+                <span>Cốt lõi: <strong>Xâm nhập ngầm</strong> ➔ <strong>Chuyển hóa tiệm tiến</strong> ➔ <strong>Sụp đổ từ bên trong</strong></span>
+              </div>
+            </div>
+
+            <!-- Right: 3 Core Characteristics Cards -->
+            <div class="characteristics-stack">
+              <div class="char-card">
+                <div class="char-icon-wrap">
+                  <i data-lucide="eye-off" style="width: 30px; height: 30px;"></i>
+                </div>
+                <div class="char-info">
+                  <h4>1. Bản chất: Ngấm ngầm & Thâm hiểm</h4>
+                  <p>Lợi dụng danh nghĩa "dân chủ, nhân quyền" can thiệp nội bộ, làm xói mòn lòng tin vào Đảng.</p>
+                </div>
+              </div>
+
+              <div class="char-card">
+                <div class="char-icon-wrap">
+                  <i data-lucide="target" style="width: 30px; height: 30px;"></i>
+                </div>
+                <div class="char-info">
+                  <h4>2. Mục tiêu: Xóa bỏ chế độ XHCN</h4>
+                  <p>Thủ tiêu vai trò lãnh đạo của Đảng, lái đất nước đi vào quỹ đạo tư bản phụ thuộc.</p>
+                </div>
+              </div>
+
+              <div class="char-card">
+                <div class="char-icon-wrap">
+                  <i data-lucide="layers" style="width: 30px; height: 30px;"></i>
+                </div>
+                <div class="char-info">
+                  <h4>3. Phương thức: Đa diện & Toàn diện</h4>
+                  <p>Đánh phá đồng bộ trên mọi mặt: Chính trị, tư tưởng, kinh tế, văn hóa và khối đại đoàn kết.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display"><i data-lucide="clock" style="width: 18px; height: 18px;"></i><span class="timer-text">00:00</span></div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i>dainam.edu.vn</a>
+          </div>
+          <div class="footer-center"><span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN</div>
+          <div class="footer-right"><div class="slide-counter"><span class="current-num">02</span> / 10</div></div>
+        </footer>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 3: 4 MŨI NHỌN CHỐNG PHÁ + CỘT CỜ HÀ NỘI PHOTO STRIP
+           ==================================================================== -->
+      <section class="slide" id="slide-3" data-slide-index="3">
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">PHẦN II: THỦ ĐOẠN TÁC CHIẾN</div>
+          </div>
+          <div class="header-right">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <div class="slide-body">
+          <div class="slide-title-wrap">
+            <span class="slide-category"><i data-lucide="shield-alert" style="width: 18px; height: 18px;"></i>Thủ đoạn trọng điểm</span>
+            <h2 class="slide-title">4 MŨI NHỌN CHỐNG PHÁ NGUY HIỂM CỦA "DBHB"</h2>
+            <p class="slide-subtitle">Các hướng xâm nhập chiến lược nhằm làm xói mòn hệ thống chính trị Việt Nam</p>
+          </div>
+
+          <div class="slide-3-wrap">
+            <div class="slide-3-grid">
+              <!-- Pillar 1: Chính trị - Tư tưởng -->
+              <div class="grid-pillar-card" style="border-top-color: #DC2626;">
+                <div>
+                  <div class="pillar-card-header">
+                    <div class="pillar-card-title-group">
+                      <div class="pillar-icon-box" style="color: #DC2626; background: #FEE2E2;">
+                        <i data-lucide="flag" style="width: 28px; height: 28px;"></i>
+                      </div>
+                      <h3 class="pillar-title">1. Chính trị - Tư tưởng</h3>
+                    </div>
+                    <span class="pillar-tag tag-red">Mũi Đột Phá</span>
+                  </div>
+                  <ul class="pillar-bullets">
+                    <li><span class="bullet-dot" style="background: #DC2626;"></span><span>Phủ nhận Chủ nghĩa Mác - Lênin, Tư tưởng Hồ Chí Minh.</span></li>
+                    <li><span class="bullet-dot" style="background: #DC2626;"></span><span>Kích động "đa nguyên chính trị, đa đảng đối lập".</span></li>
+                    <li><span class="bullet-dot" style="background: #DC2626;"></span><span>Đòi "phi chính trị hóa" lực lượng vũ trang nhân dân.</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Pillar 2: Kinh tế -->
+              <div class="grid-pillar-card" style="border-top-color: #0284C7;">
+                <div>
+                  <div class="pillar-card-header">
+                    <div class="pillar-card-title-group">
+                      <div class="pillar-icon-box" style="color: #0284C7; background: #E0F2FE;">
+                        <i data-lucide="trending-up" style="width: 28px; height: 28px;"></i>
+                      </div>
+                      <h3 class="pillar-title">2. Kinh tế</h3>
+                    </div>
+                    <span class="pillar-tag tag-blue">Mũi Đòn Bẩy</span>
+                  </div>
+                  <ul class="pillar-bullets">
+                    <li><span class="bullet-dot" style="background: #0284C7;"></span><span>Gắn viện trợ, FDI, ODA với các điều kiện chính trị.</span></li>
+                    <li><span class="bullet-dot" style="background: #0284C7;"></span><span>Lái kinh tế thị trường định hướng XHCN sang tư bản.</span></li>
+                    <li><span class="bullet-dot" style="background: #0284C7;"></span><span>Tạo sự lệ thuộc kinh tế để can thiệp chủ quyền.</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Pillar 3: Văn hóa - Xã hội -->
+              <div class="grid-pillar-card" style="border-top-color: #EA580C;">
+                <div>
+                  <div class="pillar-card-header">
+                    <div class="pillar-card-title-group">
+                      <div class="pillar-icon-box" style="color: #EA580C; background: #FFEDD5;">
+                        <i data-lucide="sparkles" style="width: 28px; height: 28px;"></i>
+                      </div>
+                      <h3 class="pillar-title">3. Văn hóa - Xã hội</h3>
+                    </div>
+                    <span class="pillar-tag tag-orange">Mũi Thẩm Thấu</span>
+                  </div>
+                  <ul class="pillar-bullets">
+                    <li><span class="bullet-dot" style="background: #EA580C;"></span><span>Truyền bá lối sống thực dụng, vị kỷ, sùng ngoại lai căng.</span></li>
+                    <li><span class="bullet-dot" style="background: #EA580C;"></span><span>Làm phai nhạt lý tưởng cách mạng trong thanh niên, sinh viên.</span></li>
+                    <li><span class="bullet-dot" style="background: #EA580C;"></span><span>Khoét sâu mâu thuẫn xã hội, chia rẽ đại đoàn kết dân tộc.</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Pillar 4: Dân tộc - Tôn giáo -->
+              <div class="grid-pillar-card" style="border-top-color: #7C3AED;">
+                <div>
+                  <div class="pillar-card-header">
+                    <div class="pillar-card-title-group">
+                      <div class="pillar-icon-box" style="color: #7C3AED; background: #F3E8FF;">
+                        <i data-lucide="compass" style="width: 28px; height: 28px;"></i>
+                      </div>
+                      <h3 class="pillar-title">4. Dân tộc - Tôn giáo</h3>
+                    </div>
+                    <span class="pillar-tag tag-purple">Mũi Ngòi Nổ</span>
+                  </div>
+                  <ul class="pillar-bullets">
+                    <li><span class="bullet-dot" style="background: #7C3AED;"></span><span>Khai thác điểm nóng đất đai tại Tây Nguyên, Tây Bắc.</span></li>
+                    <li><span class="bullet-dot" style="background: #7C3AED;"></span><span>Hậu thuẫn phản động lưu vong: FULRO, Tin lành Đề-ga.</span></li>
+                    <li><span class="bullet-dot" style="background: #7C3AED;"></span><span>Lợi dụng tự do tín ngưỡng kích động biểu tình, ly khai.</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display"><i data-lucide="clock" style="width: 18px; height: 18px;"></i><span class="timer-text">00:00</span></div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i>dainam.edu.vn</a>
+          </div>
+          <div class="footer-center"><span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN</div>
+          <div class="footer-right"><div class="slide-counter"><span class="current-num">03</span> / 10</div></div>
+        </footer>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 4: BẢN CHẤT BẠO LOẠN LẬT ĐỔ (SPLIT-SCREEN ALERT)
+           ==================================================================== -->
+      <section class="slide" id="slide-4" data-slide-index="4">
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">PHẦN III: BẠO LOẠN LẬT ĐỔ</div>
+          </div>
+          <div class="header-right">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <div class="slide-body">
+          <div class="slide-title-wrap">
+            <span class="slide-category"><i data-lucide="radio" style="width: 18px; height: 18px;"></i>Bản chất & Cấp độ tác chiến</span>
+            <h2 class="slide-title">BẢN CHẤT CỦA "BẠO LOẠN LẬT ĐỔ" (BLLĐ)</h2>
+            <p class="slide-subtitle">Sự chuyển hóa từ phương thức xâm nhập ngầm sang hành động bạo lực công khai</p>
+          </div>
+
+          <div class="slide-4-split">
+            <!-- Left Card: DBHB -->
+            <div class="alert-card dbhb-card">
+              <div class="alert-card-header">
+                <div class="alert-title-wrap">
+                  <h3>"DIỄN BIẾN HÒA BÌNH"</h3>
+                  <span style="font-size: 15px; color: #0284C7; font-weight: 800;">Giai đoạn tích tụ & làm suy yếu</span>
+                </div>
+                <span class="alert-badge badge-blue">Ngầm & Tiệm Tiến</span>
+              </div>
+              <div class="comparison-list">
+                <div class="comparison-item">
+                  <span class="comparison-label">Phương thức:</span>
+                  <span>Phi quân sự (tuyên truyền, mua chuộc, kinh tế, tâm lý).</span>
+                </div>
+                <div class="comparison-item">
+                  <span class="comparison-label">Thời gian:</span>
+                  <span>Âm ỉ kéo dài nhiều năm ("mưa dầm thấm lâu").</span>
+                </div>
+                <div class="comparison-item">
+                  <span class="comparison-label">Mục tiêu:</span>
+                  <span>Làm rỗng ruột bộ máy, chuyển hóa tư tưởng, giảm lòng tin.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Card: BLLĐ -->
+            <div class="alert-card blld-card">
+              <div class="alert-card-header">
+                <div class="alert-title-wrap">
+                  <h3>"BẠO LOẠN LẬT ĐỔ"</h3>
+                  <span style="font-size: 15px; color: #DC2626; font-weight: 800;">Giai đoạn bùng phát & đánh đòn quyết định</span>
+                </div>
+                <span class="alert-badge badge-crimson">Công Khai & Bạo Liệt</span>
+              </div>
+              <div class="comparison-list">
+                <div class="comparison-item">
+                  <span class="comparison-label">Phương thức:</span>
+                  <span>Bạo lực có tổ chức (vũ trang, chiếm công sở, khủng bố).</span>
+                </div>
+                <div class="comparison-item">
+                  <span class="comparison-label">Thời gian:</span>
+                  <span>Bùng phát chớp nhoáng, diễn ra dồn dập trong thời gian ngắn.</span>
+                </div>
+                <div class="comparison-item">
+                  <span class="comparison-label">Mục tiêu:</span>
+                  <span>Đập tan chính quyền cách mạng, lập chính quyền tay sai.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Alert Banner -->
+          <div class="central-alert-banner">
+            <i data-lucide="alert-triangle" style="width: 30px; height: 30px; color: #FBBF24; flex-shrink: 0;"></i>
+            <p>
+              <strong>KẾT LUẬN CỐT LÕI:</strong> Bạo loạn lật đổ là hành động bạo lực phản cách mạng có tổ chức, kết hợp giữa lực lượng phản động trong nước với sự chỉ đạo và hậu thuẫn từ nước ngoài!
+            </p>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display"><i data-lucide="clock" style="width: 18px; height: 18px;"></i><span class="timer-text">00:00</span></div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i>dainam.edu.vn</a>
+          </div>
+          <div class="footer-center"><span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN</div>
+          <div class="footer-right"><div class="slide-counter"><span class="current-num">04</span> / 10</div></div>
+        </footer>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 5: HÌNH THỨC & THỦ ĐOẠN BLLĐ (3 COMPARATIVE COLUMNS)
+           ==================================================================== -->
+      <section class="slide" id="slide-5" data-slide-index="5">
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">PHẦN IV: HÌNH THỨC BẠO LOẠN</div>
+          </div>
+          <div class="header-right">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <div class="slide-body">
+          <div class="slide-title-wrap">
+            <span class="slide-category"><i data-lucide="git-pull-request" style="width: 18px; height: 18px;"></i>Phân loại hình thức</span>
+            <h2 class="slide-title">CÁC HÌNH THỨC & THỦ ĐOẠN CỦA BẠO LOẠN LẬT ĐỔ</h2>
+            <p class="slide-subtitle">Ba cấp độ biểu hiện nguy hiểm từ chính trị đường phố đến bạo lực vũ trang</p>
+          </div>
+
+          <div class="slide-5-columns">
+            <!-- Column 1: Bạo loạn chính trị -->
+            <div class="col-card">
+              <div class="col-header-banner banner-blue">
+                <i data-lucide="megaphone" style="width: 32px; height: 32px;"></i>
+                <div class="col-header-text">
+                  <span>Cấp độ 1</span>
+                  <h3>Bạo loạn Chính trị</h3>
+                </div>
+              </div>
+              <div class="col-content">
+                <div class="col-section">
+                  <h5>Biểu hiện</h5>
+                  <p>Tụ tập đông người, biểu tình trái phép, bãi khóa, bao vây trụ sở chính quyền.</p>
+                </div>
+                <div class="col-section">
+                  <h5>Thủ đoạn</h5>
+                  <p>Lợi dụng mạng xã hội phát tán tin giả, kích động tâm lý đám đông.</p>
+                </div>
+                <div class="col-section">
+                  <h5>Hậu quả</h5>
+                  <p>Làm tê liệt điều hành xã hội, gây sức ép đòi chính quyền từ chức.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: Bạo loạn vũ trang -->
+            <div class="col-card">
+              <div class="col-header-banner banner-red">
+                <i data-lucide="crosshair" style="width: 32px; height: 32px;"></i>
+                <div class="col-header-text">
+                  <span>Cấp độ 2</span>
+                  <h3>Bạo loạn Vũ trang</h3>
+                </div>
+              </div>
+              <div class="col-content">
+                <div class="col-section">
+                  <h5>Biểu hiện</h5>
+                  <p>Dùng súng đạn, bom xăng, chất nổ đánh phá đồn công an, kho vũ khí.</p>
+                </div>
+                <div class="col-section">
+                  <h5>Thủ đoạn</h5>
+                  <p>Ám sát cán bộ, bắt con tin, phá hủy đài phát thanh, truyền hình.</p>
+                </div>
+                <div class="col-section">
+                  <h5>Hậu quả</h5>
+                  <p>Gây đổ máu, dựng 'vùng giải phóng', kêu gọi quốc tế can thiệp.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 3: Bạo loạn kết hợp -->
+            <div class="col-card">
+              <div class="col-header-banner banner-orange">
+                <i data-lucide="flame" style="width: 32px; height: 32px;"></i>
+                <div class="col-header-text">
+                  <span>Nguy hiểm nhất</span>
+                  <h3>Bạo loạn Kết hợp</h3>
+                </div>
+              </div>
+              <div class="col-content">
+                <div class="col-section">
+                  <h5>Biểu hiện</h5>
+                  <p>Phối hợp biểu tình chính trị với các nhóm bạo lực vũ trang nổ súng.</p>
+                </div>
+                <div class="col-section">
+                  <h5>Thủ đoạn</h5>
+                  <p>Lấy quần chúng làm 'lá chắn sống' che chắn cho phần tử khủng bố.</p>
+                </div>
+                <div class="col-section">
+                  <h5>Hậu quả</h5>
+                  <p>Thực hiện 'trong đánh ra, ngoài đánh vào', đập tan chế độ chính trị.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display"><i data-lucide="clock" style="width: 18px; height: 18px;"></i><span class="timer-text">00:00</span></div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i>dainam.edu.vn</a>
+          </div>
+          <div class="footer-center"><span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN</div>
+          <div class="footer-right"><div class="slide-counter"><span class="current-num">05</span> / 10</div></div>
+        </footer>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 6: MỐI QUAN HỆ BIỆN CHỨNG (PROCESS FLOW + HANOI AERIAL PHOTO)
+           ==================================================================== -->
+      <section class="slide" id="slide-6" data-slide-index="6">
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">PHẦN V: TƯ DUY BIỆN CHỨNG</div>
+          </div>
+          <div class="header-right">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <div class="slide-body">
+          <div class="slide-title-wrap">
+            <span class="slide-category"><i data-lucide="git-merge" style="width: 18px; height: 18px;"></i>Quy luật gắn kết</span>
+            <h2 class="slide-title">MỐI QUAN HỆ BIỆN CHỨNG GIỮA "DBHB" VÀ "BLLĐ"</h2>
+            <p class="slide-subtitle">Hai mặt thống nhất của cùng một âm mưu chiến lược nhằm lật đổ chế độ XHCN tại Việt Nam</p>
+          </div>
+
+          <!-- Main 2-Column Grid: Steps & Conclusion (Left), Visual Photo (Right) -->
+          <div class="slide-6-grid">
+            <div class="slide-6-main-col">
+              <!-- Flow Diagram Steps -->
+              <div class="flow-steps-wrapper">
+                <!-- Step 1 -->
+                <div class="flow-step-card">
+                  <span class="flow-step-num">BƯỚC 1</span>
+                  <div class="step-card-header">
+                    <span>TIỀN ĐỀ / TÍCH LŨY</span>
+                    <h4>"Diễn biến hòa bình"</h4>
+                  </div>
+                  <p>Xâm nhập ngầm, xói mòn niềm tin, tạo dựng ngọn cờ và lực lượng phản động.</p>
+                </div>
+
+                <div class="flow-arrow-separator">
+                  <i data-lucide="chevron-right" style="width: 26px; height: 26px;"></i>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flow-step-card">
+                  <span class="flow-step-num">BƯỚC 2</span>
+                  <div class="step-card-header">
+                    <span>THỜI CƠ / NGÒI NỔ</span>
+                    <h4>Tạo Điểm Nóng</h4>
+                  </div>
+                  <p>Khai thác sơ hở quản lý, sự kiện nhạy cảm để thổi bùng bức xúc dư luận.</p>
+                </div>
+
+                <div class="flow-arrow-separator">
+                  <i data-lucide="chevron-right" style="width: 26px; height: 26px;"></i>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flow-step-card" style="border-color: #DC2626;">
+                  <span class="flow-step-num" style="background: #DC2626;">BƯỚC 3</span>
+                  <div class="step-card-header">
+                    <span style="color: #DC2626;">ĐỈNH CAO / QUYẾT ĐỊNH</span>
+                    <h4 style="color: #DC2626;">"Bạo loạn lật đổ"</h4>
+                  </div>
+                  <p>Kích hoạt vũ trang công khai, đánh chiếm cơ quan đầu não, lật đổ chính quyền.</p>
+                </div>
+
+                <div class="flow-arrow-separator">
+                  <i data-lucide="chevron-right" style="width: 26px; height: 26px;"></i>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flow-step-card">
+                  <span class="flow-step-num">BƯỚC 4</span>
+                  <div class="step-card-header">
+                    <span>HẬU QUẢ / DUY TRÌ</span>
+                    <h4>Thao Túng & Tiếp tục</h4>
+                  </div>
+                  <p>Thành công: Lập chính quyền tay sai. Thất bại: Rút ngầm tiếp tục DBHB.</p>
+                </div>
+              </div>
+
+              <!-- Dialectic Synthesis Box with Context Image -->
+              <div class="dialectic-synthesis-box">
+                <div class="synthesis-icon">
+                  <i data-lucide="infinity" style="width: 36px; height: 36px;"></i>
+                </div>
+                <div class="synthesis-text">
+                  <h4>Tính quy luật biện chứng không thể tách rời</h4>
+                  <p><strong>DBHB là tiền đề, điều kiện cho BLLĐ.</strong> Ngược lại, <strong>BLLĐ là đỉnh điểm, đòn quyết định của DBHB.</strong> Không có DBHB thì BLLĐ khó nổ ra; không có BLLĐ thì DBHB khó dứt điểm lật đổ hoàn toàn chính quyền cách mạng!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual Context Photo Column (Right) -->
+            <div class="slide-6-visual-col">
+              <div class="slide-6-photo-card">
+                <img src="assets/vn-military-forces.jpg" alt="Lực lượng vũ trang Nhân dân Việt Nam" class="slide-6-photo-img">
+                <div class="slide-6-photo-overlay">
+                  <span class="photo-badge">
+                    <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+                    LLVT NHÂN DÂN VIỆT NAM
+                  </span>
+                  <h4 class="photo-title">Chủ Động Phòng Ngừa - Sẵn Sàng Đập Tan</h4>
+                  <p class="photo-desc">Thế trận quốc phòng toàn dân và an ninh nhân dân là lá chắn thép đập tan mọi âm mưu "Diễn biến hòa bình" và bạo loạn lật đổ.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display"><i data-lucide="clock" style="width: 18px; height: 18px;"></i><span class="timer-text">00:00</span></div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i>dainam.edu.vn</a>
+          </div>
+          <div class="footer-center"><span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN</div>
+          <div class="footer-right"><div class="slide-counter"><span class="current-num">06</span> / 10</div></div>
+        </footer>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 7: QUY LUẬT CHUYỂN HÓA & THĂM DÒ (CYCLE / LOOP LAYOUT)
+           ==================================================================== -->
+      <!-- ====================================================================
+           SLIDE 7: QUY LUẬT CHUYỂN HÓA & THĂM DÒ (CYCLE / LOOP SVG DIAGRAM)
+           ==================================================================== -->
+      <section class="slide theme-dark" id="slide-7" data-slide-index="7">
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">PHẦN VI: QUY LUẬT VẬN HÀNH</div>
+          </div>
+          <div class="header-right">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <div class="slide-body slide-7-body">
+          <!-- Floating Interactive Button for 3 Historical Cases -->
+          <button class="btn-slide-7-cases" onclick="toggleSlide7Modal(true)" title="Xem chi tiết 3 bài học thực tiễn lịch sử">
+            <i data-lucide="shield-alert" style="width: 18px; height: 18px;"></i>
+            <span>3 Bài Học Lịch Sử Thực Tiễn</span>
+          </button>
+
+          <!-- SVG Diagram Provided by User -->
+          <svg class="slide-7-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-40 10 2000 970" width="100%" height="100%">
+            <defs>
+              <!-- Gradient nền chủ đạo Đại Nam -->
+              <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#041226"/>
+                <stop offset="50%" stop-color="#002855"/>
+                <stop offset="100%" stop-color="#020B18"/>
+              </linearGradient>
+
+              <!-- Gradient thẻ thông thường (Cobalt Glass) -->
+              <linearGradient id="cardGradNormal" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0D2E5C" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#061833" stop-opacity="0.95"/>
+              </linearGradient>
+
+              <!-- Gradient thẻ trọng điểm LEO THANG (Orange Blaze) -->
+              <linearGradient id="cardGradAlert" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#EA580C"/>
+                <stop offset="100%" stop-color="#9A3412"/>
+              </linearGradient>
+
+              <!-- Hiệu ứng phát sáng Neon Glow -->
+              <filter id="glowOrange" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="16" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+
+              <filter id="glowBlue" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="10" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+
+              <!-- Đầu mũi tên dòng chảy -->
+              <marker id="arrowHead" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#38BDF8" />
+              </marker>
+              <marker id="arrowReturn" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L9,3 z" fill="#EA580C" />
+              </marker>
+            </defs>
+
+            <!-- Nền Slide -->
+            <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+
+            <!-- Lưới tọa độ chìm tạo cảm giác công nghệ / quân sự -->
+            <g opacity="0.05" stroke="#FFFFFF" stroke-width="1">
+              <line x1="0" y1="270" x2="1920" y2="270"/>
+              <line x1="0" y1="540" x2="1920" y2="540"/>
+              <line x1="0" y1="810" x2="1920" y2="810"/>
+              <line x1="480" y1="0" x2="480" y2="1080"/>
+              <line x1="960" y1="0" x2="960" y2="1080"/>
+              <line x1="1440" y1="0" x2="1440" y2="1080"/>
+            </g>
+
+            <!-- Header: Tiêu đề & Phụ đề -->
+            <text x="120" y="110" font-family="'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" fill="#FFFFFF" letter-spacing="1">VÒNG LẶP CHUYỂN HÓA &amp; THĂM DÒ CỦA ĐỊCH</text>
+            <rect x="120" y="130" width="140" height="4" fill="#EA580C" rx="2"/>
+            <text x="120" y="170" font-family="'Be Vietnam Pro', 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#94A3B8">Quy luật: Thăm dò phản ứng ➔ Đẩy mạnh kích động ➔ Leo thang bạo lực ➔ Rút lui chuyển hóa ngầm.</text>
+
+            <!-- ĐƯỜNG LIÊN KẾT DÒNG CHẢY (Ngang qua các thẻ) -->
+            <path d="M 270 480 L 1650 480" stroke="#0284C7" stroke-width="3" stroke-dasharray="8 6" opacity="0.4"/>
+
+            <!-- ================= BƯỚC 1: THĂM DÒ ================= -->
+            <g transform="translate(100, 310)">
+              <!-- Viền sáng -->
+              <rect width="310" height="340" rx="24" fill="url(#cardGradNormal)" stroke="#38BDF8" stroke-width="1.5" filter="url(#glowBlue)"/>
+              <!-- Huy hiệu số bước -->
+              <rect x="24" y="24" width="46" height="46" rx="12" fill="#0284C7"/>
+              <text x="47" y="55" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">01</text>
+              <!-- Icon Radar / Sóng mạng -->
+              <circle cx="240" cy="48" r="16" fill="none" stroke="#38BDF8" stroke-width="2"/>
+              <circle cx="240" cy="48" r="8" fill="none" stroke="#38BDF8" stroke-width="2"/>
+              <circle cx="240" cy="48" r="2" fill="#38BDF8"/>
+              <!-- Tiêu đề & Nội dung -->
+              <text x="24" y="130" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF">Thăm dò</text>
+              <text x="24" y="165" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#38BDF8">ĐO LƯỜNG DƯ LUẬN</text>
+              <line x1="24" y1="185" x2="286" y2="185" stroke="#1E3A8A" stroke-width="1"/>
+              <text x="24" y="225" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="18" fill="#CBD5E1">Tung tin giả, tin đồn thất</text>
+              <text x="24" y="255" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="18" fill="#CBD5E1">thiệt trên mạng xã hội.</text>
+              <text x="24" y="295" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="15" fill="#64748B">Thăm dò phản ứng người dân</text>
+            </g>
+
+            <!-- Mũi tên 1 -> 2 -->
+            <line x1="420" y1="480" x2="445" y2="480" stroke="#38BDF8" stroke-width="4" marker-end="url(#arrowHead)"/>
+
+            <!-- ================= BƯỚC 2: KÍCH ĐỘNG ================= -->
+            <g transform="translate(455, 310)">
+              <rect width="310" height="340" rx="24" fill="url(#cardGradNormal)" stroke="#38BDF8" stroke-width="1.5" filter="url(#glowBlue)"/>
+              <rect x="24" y="24" width="46" height="46" rx="12" fill="#0284C7"/>
+              <text x="47" y="55" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">02</text>
+              <!-- Icon Tia chớp kích động -->
+              <path d="M 235 32 L 245 46 L 238 48 L 247 64 L 232 50 L 239 48 Z" fill="#FBBF24"/>
+              <text x="24" y="130" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF">Kích động</text>
+              <text x="24" y="165" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#38BDF8">TẬP HỢP LỰC LƯỢNG</text>
+              <line x1="24" y1="185" x2="286" y2="185" stroke="#1E3A8A" stroke-width="1"/>
+              <text x="24" y="225" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="18" fill="#CBD5E1">Tổ chức tụ tập quy mô nhỏ,</text>
+              <text x="24" y="255" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="18" fill="#CBD5E1">khiêu khích tại chỗ.</text>
+              <text x="24" y="295" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="15" fill="#64748B">Đo tốc độ phản ứng của an ninh</text>
+            </g>
+
+            <!-- Mũi tên 2 -> 3 -->
+            <line x1="775" y1="480" x2="800" y2="480" stroke="#EA580C" stroke-width="4" marker-end="url(#arrowHead)"/>
+
+            <!-- ================= BƯỚC 3: LEO THANG (TRỌNG TÂM - LÀM TO VÀ PHÁT SÁNG) ================= -->
+            <g transform="translate(810, 270)">
+              <!-- Khung Card Cao Hơn, Rực Rỡ Hơn -->
+              <rect width="330" height="410" rx="28" fill="url(#cardGradAlert)" stroke="#FFAA00" stroke-width="3" filter="url(#glowOrange)"/>
+              <rect x="24" y="24" width="52" height="52" rx="14" fill="#7C2D12"/>
+              <text x="50" y="58" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="26" font-weight="900" fill="#FFAA00" text-anchor="middle">03</text>
+              <!-- Icon Ngọn Lửa Bạo Động -->
+              <path d="M 260 62 C 255 52 265 44 260 32 C 248 42 244 54 246 64 C 240 58 240 50 242 44 C 232 54 232 68 238 76 C 244 84 256 86 264 80 C 272 74 272 64 260 62 Z" fill="#FFFBEB"/>
+              <text x="24" y="140" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="34" font-weight="900" fill="#FFFFFF">Leo thang</text>
+              <rect x="24" y="155" width="160" height="26" rx="6" fill="#7C2D12"/>
+              <text x="104" y="173" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#FEF08A" text-anchor="middle">BẠO LOẠN VŨ TRANG</text>
+              <line x1="24" y1="200" x2="306" y2="200" stroke="#FDBA74" stroke-width="1.5" opacity="0.6"/>
+              <text x="24" y="245" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">Đưa vũ khí nóng</text>
+              <text x="24" y="275" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">và đập phá trụ sở.</text>
+              <text x="24" y="320" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="16" fill="#FED7AA">Chuyển hóa từ gây rối chính trị</text>
+              <text x="24" y="345" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="16" fill="#FED7AA">sang bạo lực vũ trang lật đổ.</text>
+            </g>
+
+            <!-- Mũi tên 3 -> 4 -->
+            <line x1="1150" y1="480" x2="1175" y2="480" stroke="#38BDF8" stroke-width="4" marker-end="url(#arrowHead)"/>
+
+            <!-- ================= BƯỚC 4: ĐÁNH GIÁ ================= -->
+            <g transform="translate(1185, 310)">
+              <rect width="310" height="340" rx="24" fill="url(#cardGradNormal)" stroke="#38BDF8" stroke-width="1.5" filter="url(#glowBlue)"/>
+              <rect x="24" y="24" width="46" height="46" rx="12" fill="#0284C7"/>
+              <text x="47" y="55" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">04</text>
+              <!-- Icon Cân nhắc / Phân tích -->
+              <circle cx="240" cy="48" r="14" fill="none" stroke="#38BDF8" stroke-width="2"/>
+              <line x1="240" y1="40" x2="240" y2="48" stroke="#38BDF8" stroke-width="2"/>
+              <line x1="240" y1="48" x2="246" y2="52" stroke="#38BDF8" stroke-width="2"/>
+              <text x="24" y="130" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF">Đánh giá</text>
+              <text x="24" y="165" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#38BDF8">ĐO LƯỜNG THỰC LỰC</text>
+              <line x1="24" y1="185" x2="286" y2="185" stroke="#1E3A8A" stroke-width="1"/>
+              <text x="24" y="225" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="18" fill="#CBD5E1">Thử sức kháng cự và</text>
+              <text x="24" y="255" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="18" fill="#CBD5E1">bản lĩnh của cách mạng.</text>
+              <text x="24" y="295" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="15" fill="#64748B">Xem xét khả năng chiếm giữ</text>
+            </g>
+
+            <!-- Mũi tên 4 -> 5 -->
+            <line x1="1505" y1="480" x2="1530" y2="480" stroke="#38BDF8" stroke-width="4" marker-end="url(#arrowHead)"/>
+
+            <!-- ================= BƯỚC 5: LÙI BƯỚC ================= -->
+            <g transform="translate(1540, 310)">
+              <rect width="310" height="340" rx="24" fill="url(#cardGradNormal)" stroke="#38BDF8" stroke-width="1.5" filter="url(#glowBlue)"/>
+              <rect x="24" y="24" width="46" height="46" rx="12" fill="#0284C7"/>
+              <text x="47" y="55" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">05</text>
+              <!-- Icon Ẩn nấp / Khiên phòng thủ -->
+              <path d="M 240 32 L 254 38 L 254 52 C 254 62 240 70 240 70 C 240 70 226 62 226 52 L 226 38 Z" fill="none" stroke="#38BDF8" stroke-width="2"/>
+              <text x="24" y="130" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF">Lùi bước</text>
+              <text x="24" y="165" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#38BDF8">RÚT VỀ BÓNG TỐI</text>
+              <line x1="24" y1="185" x2="286" y2="185" stroke="#1E3A8A" stroke-width="1"/>
+              <text x="24" y="225" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="18" fill="#CBD5E1">Bị trấn áp kiên quyết thì</text>
+              <text x="24" y="255" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="18" fill="#CBD5E1">rút lui về ẩn nấp.</text>
+              <text x="24" y="295" font-family="'Be Vietnam Pro', 'Segoe UI', sans-serif" font-size="15" fill="#64748B">Bảo toàn lực lượng ngầm</text>
+            </g>
+
+            <!-- ================= ĐƯỜNG HỒI TIẾP VÒNG LẶP (QUAY VỀ BƯỚC 1) ================= -->
+            <path d="M 1695 655 
+                     L 1695 810 
+                     A 30 30 0 0 1 1665 840 
+                     L 285 840 
+                     A 30 30 0 0 1 255 810 
+                     L 255 665" 
+                  fill="none" 
+                  stroke="#EA580C" 
+                  stroke-width="4" 
+                  stroke-dasharray="14 10" 
+                  marker-end="url(#arrowReturn)"
+                  filter="url(#glowOrange)"/>
+
+            <!-- Capsule Huy Hiệu Vòng Lặp Chính Giữa -->
+            <g transform="translate(510, 804)">
+              <rect width="900" height="72" rx="36" fill="#0A2540" stroke="#EA580C" stroke-width="2.5" filter="url(#glowOrange)"/>
+              <circle cx="48" cy="36" r="22" fill="#EA580C"/>
+              <text x="48" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">↺</text>
+              <text x="495" y="44" font-family="'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Tiếp tục chuyển hóa ngầm, củng cố lực lượng và chờ thời cơ mới</text>
+            </g>
+          </svg>
+
+          <!-- Modal for 3 Historical Cases -->
+          <div id="slide-7-modal" class="slide-7-modal-overlay" onclick="if(event.target === this) toggleSlide7Modal(false)">
+            <div class="slide-7-modal-card">
+              <div class="slide-7-modal-header">
+                <h3><i data-lucide="shield-alert" style="color: var(--color-primary); width: 26px; height: 26px;"></i>3 BÀI HỌC THỰC TIỄN LỊCH SỬ ĐẮT GIÁ</h3>
+                <button class="slide-7-modal-close" onclick="toggleSlide7Modal(false)"><i data-lucide="x" style="width: 24px; height: 24px;"></i></button>
+              </div>
+              <div class="slide-7-modal-grid">
+                <div class="case-card">
+                  <h4><i data-lucide="landmark" style="width: 22px; height: 22px;"></i>1. Liên Xô &amp; Đông Âu (1991)</h4>
+                  <p>Sụp đổ bắt nguồn từ "tự diễn biến", "tự chuyển hóa" và nới lỏng trận địa tư tưởng dưới chiêu bài "Cải tổ" ngây thơ.</p>
+                </div>
+                <div class="case-card">
+                  <h4><i data-lucide="globe" style="width: 22px; height: 22px;"></i>2. "Cách Mạng Màu" Thế Kỷ 21</h4>
+                  <p>Kịch bản lôi kéo giới trẻ, học sinh - sinh viên xuống đường làm "ngòi nổ" chính trị lật đổ chính quyền hợp pháp.</p>
+                </div>
+                <div class="case-card danger">
+                  <h4 style="color: var(--color-accent-crimson);"><i data-lucide="alert-octagon" style="width: 22px; height: 22px;"></i>3. Khủng Bố Tại Đắk Lắk (06/2023)</h4>
+                  <p>Nhóm vũ trang nổ súng tấn công trụ sở xã dưới sự chỉ đạo của phản động lưu vong — Bài học đắt giá về tinh thần cảnh giác!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display"><i data-lucide="clock" style="width: 18px; height: 18px;"></i><span class="timer-text">00:00</span></div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i>dainam.edu.vn</a>
+          </div>
+          <div class="footer-center"><span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN</div>
+          <div class="footer-right"><div class="slide-counter"><span class="current-num">07</span> / 10</div></div>
+        </footer>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 8: TRÁCH NHIỆM SINH VIÊN - BẢN LĨNH TƯ TƯỞNG (3 PILLARS)
+           ==================================================================== -->
+      <section class="slide" id="slide-8" data-slide-index="8">
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">PHẦN VII: TRÁCH NHIỆM SINH VIÊN</div>
+          </div>
+          <div class="header-right">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <div class="slide-body">
+          <div class="slide-title-wrap">
+            <span class="slide-category"><i data-lucide="user-check" style="width: 18px; height: 18px;"></i>Sứ mệnh tuổi trẻ Đại Nam</span>
+            <h2 class="slide-title">TRÁCH NHIỆM SINH VIÊN: XÂY DỰNG BẢN LĨNH TƯ TƯỞNG</h2>
+            <p class="slide-subtitle">Trở thành "pháo đài vững chắc" từ chính nhận thức, tri thức và lối sống của sinh viên Đại học Đại Nam</p>
+          </div>
+
+          <div class="slide-8-pillars">
+            <!-- Pillar 1 -->
+            <div class="pillar-column">
+              <span class="pillar-badge-num">TRỤ CỘT I</span>
+              <div class="pillar-col-icon">
+                <i data-lucide="book-marked" style="width: 32px; height: 32px;"></i>
+              </div>
+              <h3>Nhận Thức Lý Luận</h3>
+              <ul class="pillar-column-list">
+                <li><i data-lucide="check" class="check-icon"></i><span>Học tập nghiêm túc môn GDQP-AN và Lý luận chính trị.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Nắm vững đường lối của Đảng về bảo vệ Tổ quốc tình hình mới.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Hiểu rõ đối tác - đối tượng, không mơ hồ trước luận điệu thù địch.</span></li>
+              </ul>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="pillar-column">
+              <span class="pillar-badge-num">TRỤ CỘT II</span>
+              <div class="pillar-col-icon" style="background: var(--color-primary-soft); color: var(--color-primary);">
+                <i data-lucide="shield" style="width: 32px; height: 32px;"></i>
+              </div>
+              <h3>Sức Đề Kháng Đạo Đức</h3>
+              <ul class="pillar-column-list">
+                <li><i data-lucide="check" class="check-icon"></i><span>Thực hiện triết lý: <strong>"Học để thay đổi"</strong> — Bản lĩnh, Khát vọng.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Nói không với văn hóa độc hại, lối sống thực dụng, sùng ngoại.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Giữ gìn chuẩn mực đạo đức, phong cách sinh viên Đại Nam.</span></li>
+              </ul>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="pillar-column">
+              <span class="pillar-badge-num">TRỤ CỘT III</span>
+              <div class="pillar-col-icon" style="background: #FEE2E2; color: #DC2626;">
+                <i data-lucide="sword" style="width: 32px; height: 32px;"></i>
+              </div>
+              <h3>Chủ Động Đấu Tranh</h3>
+              <ul class="pillar-column-list">
+                <li><i data-lucide="check" class="check-icon"></i><span>Dũng cảm phản bác các quan điểm sai trái trên giảng đường.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Lan tỏa hình ảnh đẹp, người tốt việc tốt và tinh thần yêu nước.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Giữ vững niềm tin sắt son vào con đường đi lên CNXH của Đảng.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display"><i data-lucide="clock" style="width: 18px; height: 18px;"></i><span class="timer-text">00:00</span></div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i>dainam.edu.vn</a>
+          </div>
+          <div class="footer-center"><span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN</div>
+          <div class="footer-right"><div class="slide-counter"><span class="current-num">08</span> / 10</div></div>
+        </footer>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 9: TRÁCH NHIỆM SV - KHÔNG GIAN MẠNG (2x2 ACTION MATRIX)
+           ==================================================================== -->
+      <section class="slide" id="slide-9" data-slide-index="9">
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">PHẦN VIII: HÀNH ĐỘNG THỰC TIỄN</div>
+          </div>
+          <div class="header-right">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <div class="slide-body">
+          <div class="slide-title-wrap">
+            <span class="slide-category"><i data-lucide="globe" style="width: 18px; height: 18px;"></i>Không gian số & Đời sống</span>
+            <h2 class="slide-title">HÀNH ĐỘNG CỤ THỂ TRÊN KHÔNG GIAN MẠNG VÀ THỰC TẾ</h2>
+            <p class="slide-subtitle">Quy tắc ứng xử thông minh, tỉnh táo của người công dân số Đại học Đại Nam</p>
+          </div>
+
+          <div class="slide-9-matrix">
+            <!-- Quad 1: 5K Thông tin số -->
+            <div class="matrix-card">
+              <div class="matrix-card-top">
+                <div class="matrix-icon-wrap">
+                  <i data-lucide="shield-check" style="width: 26px; height: 26px;"></i>
+                </div>
+                <h3 class="matrix-title">1. Quy Tắc "5K Thông Tin Số"</h3>
+              </div>
+              <ul class="matrix-body-list">
+                <li><i data-lucide="check" class="check-icon"></i><span><strong>Không vội tin:</strong> Kiểm chứng nguồn báo chí chính thống.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span><strong>Không like:</strong> Không tiếp tay tương tác cho tin xấu độc.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span><strong>Không share:</strong> Không chia sẻ thông tin chưa xác minh.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span><strong>Không kích động:</strong> Tránh tranh cãi, thù hằn trên mạng.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span><strong>Không kết nối:</strong> Từ chối tham gia hội nhóm kín phản động.</span></li>
+              </ul>
+            </div>
+
+            <!-- Quad 2: Thượng tôn Pháp luật -->
+            <div class="matrix-card">
+              <div class="matrix-card-top">
+                <div class="matrix-icon-wrap">
+                  <i data-lucide="scale" style="width: 26px; height: 26px;"></i>
+                </div>
+                <h3 class="matrix-title">2. Thượng Tôn Pháp Luật</h3>
+              </div>
+              <ul class="matrix-body-list">
+                <li><i data-lucide="check" class="check-icon"></i><span>Chấp hành nghiêm <strong>Luật An ninh mạng năm 2018</strong>.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Không đăng tải nội dung chống phá Nhà nước (Điều 8).</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Chịu trách nhiệm pháp lý với phát ngôn trên tài khoản cá nhân.</span></li>
+              </ul>
+            </div>
+
+            <!-- Quad 3: Cảnh giác lôi kéo -->
+            <div class="matrix-card">
+              <div class="matrix-card-top">
+                <div class="matrix-icon-wrap" style="background: #FEE2E2; color: #DC2626;">
+                  <i data-lucide="alert-triangle" style="width: 26px; height: 26px;"></i>
+                </div>
+                <h3 class="matrix-title">3. Cảnh Giác Cạm Bẫy Lôi Kéo</h3>
+              </div>
+              <ul class="matrix-body-list">
+                <li><i data-lucide="check" class="check-icon"></i><span>Cảnh giác: "Học bổng trá hình", "Tôn giáo lạ", "Việc nhẹ lương cao".</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Báo ngay Đoàn trường, Khoa và Công an khi thấy bất thường.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Bảo mật CCCD và dữ liệu cá nhân, tránh bị kẻ xấu lợi dụng.</span></li>
+              </ul>
+            </div>
+
+            <!-- Quad 4: Rèn luyện kỷ luật quân nhân -->
+            <div class="matrix-card">
+              <div class="matrix-card-top">
+                <div class="matrix-icon-wrap" style="background: #E0F2FE; color: #0284C7;">
+                  <i data-lucide="target" style="width: 26px; height: 26px;"></i>
+                </div>
+                <h3 class="matrix-title">4. Rèn Luyện Tác Phong Quân Nhân</h3>
+              </div>
+              <ul class="matrix-body-list">
+                <li><i data-lucide="check" class="check-icon"></i><span>Hoàn thành xuất sắc khóa huấn luyện quân sự tại Đại Nam.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Rèn luyện tính kỷ luật, giờ giấc chính quy và tinh thần đồng đội.</span></li>
+                <li><i data-lucide="check" class="check-icon"></i><span>Sẵn sàng tham gia nghĩa vụ quân sự và bảo vệ Tổ quốc.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display"><i data-lucide="clock" style="width: 18px; height: 18px;"></i><span class="timer-text">00:00</span></div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i>dainam.edu.vn</a>
+          </div>
+          <div class="footer-center"><span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN</div>
+          <div class="footer-right"><div class="slide-counter"><span class="current-num">09</span> / 10</div></div>
+        </footer>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 10: THÔNG ĐIỆP KẾT LUẬN & CLOSING (ĐỀN HÙNG QUOTE BANNER)
+           ==================================================================== -->
+      <section class="slide theme-dark" id="slide-10" data-slide-index="10">
+        <header class="slide-header">
+          <div class="header-left">
+            <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+            <div class="header-topic-badge">TỔNG KẾT BÁO CÁO</div>
+          </div>
+          <div class="header-right">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+          </div>
+        </header>
+
+        <div class="slide-body" style="background: radial-gradient(circle at 50% 40%, #0A2246 0%, #040D1C 100%);">
+          <div class="slide-10-wrap">
+            <!-- Quote Hero Banner with Authentic Hung Temple Photo -->
+            <div class="quote-hero-banner">
+              <div class="quote-img-box">
+                <img src="assets/vn-hung-temple.jpg" alt="Đền Hùng Phú Thọ">
+              </div>
+              <div class="quote-text-wrap">
+                <blockquote>
+                  "Các Vua Hùng đã có công dựng nước, Bác cháu ta phải cùng nhau giữ lấy nước."
+                </blockquote>
+                <cite>— Lời căn dặn của Chủ tịch Hồ Chí Minh (19/09/1954 tại Đền Hùng)</cite>
+              </div>
+            </div>
+
+            <!-- 3 Takeaway Cards -->
+            <div class="closing-cards-grid">
+              <div class="conclusion-card">
+                <h4><i data-lucide="alert-circle" style="width: 24px; height: 24px;"></i>1. Cảnh Giác Thường Trực</h4>
+                <p>Chiến lược "DBHB" và nguy cơ bạo loạn là hiểm họa thường trực, không một phút giây nào được lơ là.</p>
+              </div>
+
+              <div class="conclusion-card">
+                <h4><i data-lucide="shield-check" style="width: 24px; height: 24px;"></i>2. Hành Động Thiết Thực</h4>
+                <p>Bảo vệ Tổ quốc qua việc học thật, thi thật, rèn luyện nghiêm túc và sống có trách nhiệm.</p>
+              </div>
+
+              <div class="conclusion-card">
+                <h4><i data-lucide="heart" style="width: 24px; height: 24px;"></i>3. Tự Hào Đại Nam</h4>
+                <p>Khắc ghi phương châm <strong>"Học để thay đổi"</strong>, thế hệ trẻ Đại Nam vững bước dựng xây đất nước!</p>
+              </div>
+            </div>
+
+            <!-- Q&A and Thank Box -->
+            <div class="closing-action-box">
+              <div class="qa-invite">
+                <h4>XIN TRÂN TRỌNG CẢM ƠN QUÝ THẦY CÔ VÀ CÁC BẠN!</h4>
+                <p>Nhóm 1 sẵn sàng lắng nghe ý kiến nhận xét và giải đáp câu hỏi (Q&A).</p>
+              </div>
+              <div class="closing-thank-badge">
+                <i data-lucide="message-square" style="width: 22px; height: 22px;"></i>
+                <span>PHIÊN THẢO LUẬN & HỎI ĐÁP (Q&A)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="slide-footer">
+          <div class="footer-left">
+            <div class="footer-timer-display"><i data-lucide="clock" style="width: 18px; height: 18px;"></i><span class="timer-text">00:00</span></div>
+            <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i>dainam.edu.vn</a>
+          </div>
+          <div class="footer-center"><span class="footer-meta-pill">Nhóm 1</span> | Tiểu đội 1 | Trung đội 1 | Đại đội 6 | Môn: GDQP-AN</div>
+          <div class="footer-right"><div class="slide-counter"><span class="current-num">10</span> / 10</div></div>
+        </footer>
+      </section>
+
+    </div><!-- /#slide-stage -->
+  </div><!-- /#viewport -->
+
+  <!-- ====================================================================
+       FLOATING HUD CONTROLS
+       ==================================================================== -->
+  <div id="hud-controls">
+    <!-- Prev Button -->
+    <button class="hud-btn" id="btn-prev" title="Trang trước (← / PageUp)" onclick="prevSlide()">
+      <i data-lucide="chevron-left" style="width: 22px; height: 22px;"></i>
+    </button>
+
+    <!-- Slide Jump Dropdown -->
+    <select class="hud-slide-select" id="hud-slide-select" onchange="goToSlide(parseInt(this.value))">
+      <option value="1">01. Trang bìa: Giới thiệu chuyên đề</option>
+      <option value="2">02. Khái niệm chiến lược DBHB</option>
+      <option value="3">03. 4 Mũi nhọn chống phá trọng yếu</option>
+      <option value="4">04. Bản chất Bạo loạn lật đổ</option>
+      <option value="5">05. Hình thức & Thủ đoạn BLLĐ</option>
+      <option value="6">06. Mối quan hệ biện chứng DBHB & BLLĐ</option>
+      <option value="7">07. Quy luật chuyển hóa & Bài học cảnh giác</option>
+      <option value="8">08. Trách nhiệm SV: Bản lĩnh tư tưởng</option>
+      <option value="9">09. Trách nhiệm SV: Không gian mạng</option>
+      <option value="10">10. Thông điệp kết luận & Thảo luận</option>
+    </select>
+
+    <!-- Next Button -->
+    <button class="hud-btn primary" id="btn-next" title="Trang kế (→ / Space)" onclick="nextSlide()">
+      <i data-lucide="chevron-right" style="width: 22px; height: 22px;"></i>
+    </button>
+
+    <div class="hud-divider"></div>
+
+    <!-- Timer Control -->
+    <div class="hud-timer-badge">
+      <i data-lucide="timer" style="width: 18px; height: 18px;"></i>
+      <span id="hud-timer-display">00:00</span>
+    </div>
+    <button class="hud-btn" id="btn-timer-toggle" title="Tạm dừng / Tiếp tục đếm giờ" onclick="toggleTimer()">
+      <i data-lucide="play" id="icon-timer-state" style="width: 18px; height: 18px;"></i>
+    </button>
+    <button class="hud-btn" id="btn-timer-reset" title="Đặt lại bộ đếm giờ" onclick="resetTimer()">
+      <i data-lucide="rotate-ccw" style="width: 18px; height: 18px;"></i>
+    </button>
+
+    <div class="hud-divider"></div>
+
+    <!-- Fullscreen Toggle -->
+    <button class="hud-btn" id="btn-fullscreen" title="Toàn màn hình (F)" onclick="toggleFullscreen()">
+      <i data-lucide="maximize" id="icon-fullscreen" style="width: 19px; height: 19px;"></i>
+    </button>
+
+    <!-- Focus Mode / Hide HUD Toggle -->
+    <button class="hud-btn" id="btn-focus-mode" title="Ẩn/Hiện thanh điều khiển (H)" onclick="toggleHUD()">
+      <i data-lucide="eye" style="width: 19px; height: 19px;"></i>
+    </button>
+
+    <!-- Export PDF (Canvas 2K) -->
+    <button class="hud-btn text-btn" id="btn-export-pdf" title="Xuất toàn bộ 10 Slide thành 1 file PDF (Canvas 2K siêu nét)" onclick="exportToPDF2K()">
+      <i data-lucide="file-text" style="width: 17px; height: 17px;"></i>
+      <span>Xuất PDF</span>
+    </button>
+
+    <!-- Export PPTX (Canvas 2K) -->
+    <button class="hud-btn primary text-btn" id="btn-export-pptx" title="Xuất toàn bộ 10 Slide thành 1 file PowerPoint (Canvas 2K siêu nét)" onclick="exportToPPTX2K()">
+      <i data-lucide="presentation" style="width: 17px; height: 17px;"></i>
+      <span>Xuất PPTX</span>
+    </button>
+
+    <!-- Shortcuts Help -->
+    <button class="hud-btn" title="Phím tắt trợ giúp (?)" onclick="toggleHelpModal(true)">
+      <i data-lucide="help-circle" style="width: 19px; height: 19px;"></i>
+    </button>
+  </div>
+
+  <!-- Keyboard Shortcuts Modal -->
+  <div class="modal-overlay" id="help-modal" onclick="if(event.target===this) toggleHelpModal(false)">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i data-lucide="keyboard" style="color: var(--color-primary); width: 26px; height: 26px;"></i>
+          <span>Phím Tắt Điều Khiển Thuyết Trình</span>
+        </div>
+        <button class="modal-close-btn" onclick="toggleHelpModal(false)">
+          <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+      <div>
+        <div class="shortcut-row">
+          <span>Chuyển sang trang tiếp theo</span>
+          <span class="shortcut-key">Phím → / Phím Cách (Space) / PageDown</span>
+        </div>
+        <div class="shortcut-row">
+          <span>Quay lại trang trước</span>
+          <span class="shortcut-key">Phím ← / PageUp</span>
+        </div>
+        <div class="shortcut-row">
+          <span>Về trang đầu / Trang cuối</span>
+          <span class="shortcut-key">Home / End</span>
+        </div>
+        <div class="shortcut-row">
+          <span>Bật/Tắt Toàn màn hình</span>
+          <span class="shortcut-key">Phím F</span>
+        </div>
+        <div class="shortcut-row">
+          <span>Bật/Tắt Chế độ tập trung (Ẩn/Hiện HUD)</span>
+          <span class="shortcut-key">Phím H</span>
+        </div>
+        <div class="shortcut-row">
+          <span>Đóng cửa sổ trợ giúp</span>
+          <span class="shortcut-key">Phím Esc</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export Progress Modal (Canvas 2K Packaging) -->
+  <div class="export-modal-overlay" id="export-progress-modal">
+    <div class="export-modal-card">
+      <div class="export-modal-header">
+        <div class="export-spinner-ring"></div>
+        <div>
+          <h3 id="export-modal-title">Đang Xuất Bản Trình Chiếu 2K</h3>
+          <p id="export-modal-desc">Đang chụp từng slide ở độ phân giải Canvas 2K siêu nét...</p>
+        </div>
+      </div>
+      <div class="export-bar-track">
+        <div class="export-bar-fill" id="export-modal-bar" style="width: 0%;"></div>
+      </div>
+      <div class="export-modal-status">
+        <span id="export-modal-current">Chuẩn bị khởi tạo...</span>
+        <span id="export-modal-percent">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       CORE PRESENTATION LOGIC, RESIZING & PPTX EXPORT ENGINE
+       ==================================================================== -->
+  <script>
+    /* ==========================================================================
+       PRESENTATION STATE
+       ========================================================================== */
+    const PresentationState = {
+      currentSlide: 1,
+      totalSlides: 10,
+      isTimerRunning: false,
+      timerSeconds: 0,
+      timerInterval: null,
+      hudVisible: true
+    };
+
+    /* ==========================================================================
+       VIEWPORT & ASPECT RATIO SCALING ENGINE (1920x1080 -> Viewport)
+       ========================================================================== */
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      const viewport = document.getElementById('viewport');
+      if (!stage || !viewport) return;
+
+      const vw = viewport.clientWidth;
+      const vh = viewport.clientHeight;
+      const baseWidth = 1920;
+      const baseHeight = 1080;
+
+      const scale = Math.min(vw / baseWidth, vh / baseHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('orientationchange', updateStageScale);
+
+    /* ==========================================================================
+       SLIDE NAVIGATION CONTROLLER
+       ========================================================================== */
+    function goToSlide(slideNum) {
+      if (slideNum < 1 || slideNum > PresentationState.totalSlides) return;
+      if (slideNum === PresentationState.currentSlide && document.querySelector(`.slide.active`)) return;
+
+      // Start timer automatically when navigating away from Slide 1
+      if (slideNum > 1 && !PresentationState.isTimerRunning && PresentationState.timerSeconds === 0) {
+        startTimer();
+      }
+
+      // Update slide elements
+      const currentEl = document.querySelector(`.slide.active`);
+      if (currentEl) currentEl.classList.remove('active');
+
+      const nextEl = document.getElementById(`slide-${slideNum}`);
+      if (nextEl) nextEl.classList.add('active');
+
+      PresentationState.currentSlide = slideNum;
+
+      // Update top progress bar
+      const progressPercent = (slideNum / PresentationState.totalSlides) * 100;
+      const progressBar = document.getElementById('top-progress-bar');
+      if (progressBar) progressBar.style.width = `${progressPercent}%`;
+
+      // Update dropdown selector in HUD
+      const selectEl = document.getElementById('hud-slide-select');
+      if (selectEl) selectEl.value = slideNum;
+
+      // Update Lucide icons on demand
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    }
+
+    function nextSlide() {
+      if (PresentationState.currentSlide < PresentationState.totalSlides) {
+        goToSlide(PresentationState.currentSlide + 1);
+      } else {
+        showToast("Đã đến trang kết luận cuối cùng!");
+      }
+    }
+
+    function prevSlide() {
+      if (PresentationState.currentSlide > 1) {
+        goToSlide(PresentationState.currentSlide - 1);
+      }
+    }
+
+    /* ==========================================================================
+       PRESENTATION TIMER ENGINE
+       ========================================================================== */
+    function startTimer() {
+      if (PresentationState.isTimerRunning) return;
+      PresentationState.isTimerRunning = true;
+      updateTimerUIState();
+
+      PresentationState.timerInterval = setInterval(() => {
+        PresentationState.timerSeconds++;
+        updateTimerDisplays();
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      if (!PresentationState.isTimerRunning) return;
+      PresentationState.isTimerRunning = false;
+      clearInterval(PresentationState.timerInterval);
+      PresentationState.timerInterval = null;
+      updateTimerUIState();
+    }
+
+    function toggleTimer() {
+      if (PresentationState.isTimerRunning) {
+        pauseTimer();
+        showToast("Đã tạm dừng bộ đếm giờ");
+      } else {
+        startTimer();
+        showToast("Tiếp tục bộ đếm giờ");
+      }
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      PresentationState.timerSeconds = 0;
+      updateTimerDisplays();
+      showToast("Đã đặt lại bộ đếm giờ về 00:00");
+    }
+
+    function formatTime(totalSec) {
+      const minutes = Math.floor(totalSec / 60);
+      const seconds = totalSec % 60;
+      return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    function updateTimerDisplays() {
+      const formatted = formatTime(PresentationState.timerSeconds);
+      const hudTimer = document.getElementById('hud-timer-display');
+      if (hudTimer) hudTimer.textContent = formatted;
+
+      document.querySelectorAll('.timer-text').forEach(el => {
+        el.textContent = formatted;
+      });
+    }
+
+    function updateTimerUIState() {
+      const icon = document.getElementById('icon-timer-state');
+      if (icon) {
+        if (PresentationState.isTimerRunning) {
+          icon.setAttribute('data-lucide', 'pause');
+        } else {
+          icon.setAttribute('data-lucide', 'play');
+        }
+        if (window.lucide) window.lucide.createIcons();
+      }
+    }
+
+    /* ==========================================================================
+       FULLSCREEN & FOCUS MODE (HIDE HUD)
+       ========================================================================== */
+    function toggleFullscreen() {
+      const icon = document.getElementById('icon-fullscreen');
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().then(() => {
+          if (icon) icon.setAttribute('data-lucide', 'minimize');
+          if (window.lucide) window.lucide.createIcons();
+          showToast("Đã bật chế độ Toàn màn hình (Nhấn F hoặc Esc để thoát)");
+        }).catch(err => {
+          console.warn("Fullscreen request error:", err);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().then(() => {
+            if (icon) icon.setAttribute('data-lucide', 'maximize');
+            if (window.lucide) window.lucide.createIcons();
+          });
+        }
+      }
+    }
+
+    function toggleHUD() {
+      const hud = document.getElementById('hud-controls');
+      PresentationState.hudVisible = !PresentationState.hudVisible;
+      if (PresentationState.hudVisible) {
+        hud.classList.remove('hidden-hud');
+        showToast("Đã hiển thị thanh điều khiển");
+      } else {
+        hud.classList.add('hidden-hud');
+        showToast("Chế độ Thuyết trình tập trung (Nhấn H để hiện lại)");
+      }
+    }
+
+    function toggleHelpModal(open) {
+      const modal = document.getElementById('help-modal');
+      if (open) {
+        modal.classList.add('open');
+      } else {
+        modal.classList.remove('open');
+      }
+    }
+
+    function toggleSlide7Modal(open) {
+      const modal = document.getElementById('slide-7-modal');
+      if (!modal) return;
+      if (open) {
+        modal.classList.add('active');
+        if (window.lucide) window.lucide.createIcons();
+      } else {
+        modal.classList.remove('active');
+      }
+    }
+
+    /* ==========================================================================
+       TOAST NOTIFICATION HELPER
+       ========================================================================== */
+    let toastTimeout = null;
+    function showToast(message) {
+      const toast = document.getElementById('toast-notification');
+      const msgEl = document.getElementById('toast-msg');
+      if (!toast || !msgEl) return;
+
+      msgEl.textContent = message;
+      toast.classList.add('show');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    /* ==========================================================================
+       KEYBOARD SHORTCUTS CONTROLLER
+       ========================================================================== */
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') {
+        return;
+      }
+
+      switch (e.key) {
+        case 'ArrowRight':
+        case 'ArrowDown':
+        case ' ':
+        case 'PageDown':
+          e.preventDefault();
+          nextSlide();
+          break;
+
+        case 'ArrowLeft':
+        case 'ArrowUp':
+        case 'PageUp':
+          e.preventDefault();
+          prevSlide();
+          break;
+
+        case 'Home':
+        case 'h':
+        case 'H':
+          if (e.key === 'Home') {
+            e.preventDefault();
+            goToSlide(1);
+          } else {
+            e.preventDefault();
+            toggleHUD();
+          }
+          break;
+
+        case 'End':
+          e.preventDefault();
+          goToSlide(PresentationState.totalSlides);
+          break;
+
+        case 'f':
+        case 'F':
+          e.preventDefault();
+          toggleFullscreen();
+          break;
+
+        case '?':
+          e.preventDefault();
+          toggleHelpModal(true);
+          break;
+
+        case 'Escape':
+          toggleHelpModal(false);
+          toggleSlide7Modal(false);
+          if (!PresentationState.hudVisible) {
+            toggleHUD();
+          }
+          break;
+      }
+    });
+
+    /* ==========================================================================
+       PROGRESS MODAL CONTROLLER FOR 2K CANVAS EXPORT
+       ========================================================================== */
+    function showExportProgress(title, desc) {
+      const modal = document.getElementById('export-progress-modal');
+      if (!modal) return;
+      const titleEl = document.getElementById('export-modal-title');
+      const descEl = document.getElementById('export-modal-desc');
+      const barEl = document.getElementById('export-modal-bar');
+      const curEl = document.getElementById('export-modal-current');
+      const pctEl = document.getElementById('export-modal-percent');
+
+      if (titleEl) titleEl.textContent = title || "Đang Xuất Bản Trình Chiếu 2K";
+      if (descEl) descEl.textContent = desc || "Đang chụp từng slide ở độ phân giải Canvas 2K siêu nét (2560x1440)...";
+      if (barEl) barEl.style.width = "0%";
+      if (curEl) curEl.textContent = "Chuẩn bị khởi tạo...";
+      if (pctEl) pctEl.textContent = "0%";
+      modal.classList.add('active');
+    }
+
+    function updateExportProgress(current, total, statusText) {
+      const percent = Math.min(100, Math.round((current / total) * 100));
+      const barEl = document.getElementById('export-modal-bar');
+      const curEl = document.getElementById('export-modal-current');
+      const pctEl = document.getElementById('export-modal-percent');
+      if (barEl) barEl.style.width = `${percent}%`;
+      if (curEl) curEl.textContent = statusText || `Đang xử lý ${current}/${total}`;
+      if (pctEl) pctEl.textContent = `${percent}%`;
+    }
+
+    function hideExportProgress() {
+      const modal = document.getElementById('export-progress-modal');
+      if (!modal) return;
+      modal.classList.remove('active');
+    }
+
+    /* ==========================================================================
+       CANVAS 2K CAPTURE ENGINE
+       Captures each slide at standard 2K resolution (2560 x 1440)
+       Excludes all Web UI (HUD, modals, progress bar, toast) and live timer displays
+       ========================================================================== */
+    let isExporting2K = false;
+
+    async function captureAllSlides2K(onProgress) {
+      if (isExporting2K) {
+        throw new Error("Đang có tiến trình xuất file khác đang hoạt động!");
+      }
+      isExporting2K = true;
+
+      const total = PresentationState.totalSlides;
+      const savedSlide = PresentationState.currentSlide;
+      const stage = document.getElementById('slide-stage');
+      const origTransform = stage ? stage.style.transform : '';
+
+      // Activate exporting mode: strips transform/transitions, hides UI web and timer displays
+      document.body.classList.add('exporting-2k');
+
+      const capturedImages = [];
+
+      try {
+        for (let i = 1; i <= total; i++) {
+          if (onProgress) {
+            onProgress(i, total + 1, `Đang chụp Canvas 2K: Slide ${i}/${total}...`);
+          }
+
+          // Show only target slide
+          const allSlides = document.querySelectorAll('.slide');
+          allSlides.forEach(s => s.classList.remove('active'));
+
+          const targetSlide = document.getElementById(`slide-${i}`);
+          if (!targetSlide) continue;
+          targetSlide.classList.add('active');
+
+          // Ensure icons and layout are fully rendered
+          if (window.lucide) {
+            window.lucide.createIcons();
+          }
+
+          // Delay for DOM layout reflow and font painting
+          await new Promise(r => setTimeout(r, 120));
+
+          // Capture element at 2K resolution: 1920 * (2560/1920) = 2560, 1080 * (2560/1920) = 1440
+          const canvas = await html2canvas(targetSlide, {
+            scale: 2560 / 1920,
+            width: 1920,
+            height: 1080,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: null,
+            logging: false,
+            imageTimeout: 15000
+          });
+
+          // Lossless PNG for crisp typography, icons, and diagrams
+          const dataUrl = canvas.toDataURL('image/png');
+          capturedImages.push(dataUrl);
+        }
+
+        return capturedImages;
+      } finally {
+        // Restore presentation state and layout
+        document.body.classList.remove('exporting-2k');
+        if (stage) stage.style.transform = origTransform;
+        goToSlide(savedSlide);
+        updateStageScale();
+        isExporting2K = false;
+      }
+    }
+
+    /* ==========================================================================
+       EXPORT TO PPTX (POWERPOINT 2K CANVAS IMAGES)
+       ========================================================================== */
+    async function exportToPPTX2K() {
+      if (typeof PptxGenJS === 'undefined') {
+        showToast("Thư viện PptxGenJS đang tải, vui lòng thử lại sau giây lát...");
+        return;
+      }
+      if (typeof html2canvas === 'undefined') {
+        showToast("Thư viện html2canvas đang tải, vui lòng thử lại sau giây lát...");
+        return;
+      }
+
+      showExportProgress("Đang Xuất File PowerPoint (PPTX 2K)", "Đang chụp từng slide ở độ phân giải Canvas 2K siêu nét (2560x1440)...");
+
+      try {
+        const images = await captureAllSlides2K((cur, total, msg) => {
+          updateExportProgress(cur, total, msg);
+        });
+
+        updateExportProgress(11, 11, "Đang đóng gói file PowerPoint (.pptx)...");
+
+        const pptx = new PptxGenJS();
+        pptx.layout = 'LAYOUT_16x9'; // 10 x 5.625 inches (16:9 widescreen)
+        pptx.title = "Chiến Lược Diễn Biến Hòa Bình & Bạo Loạn Lật Đổ - Đại Học Đại Nam (Bản Canvas 2K)";
+        pptx.subject = "Báo cáo thuyết trình môn Giáo dục Quốc phòng và An ninh";
+        pptx.author = "Nhóm 1 - Đại đội 6 - Đại học Đại Nam";
+        pptx.company = "Trường Đại học Đại Nam (DNU)";
+
+        for (let i = 0; i < images.length; i++) {
+          const slide = pptx.addSlide();
+          slide.addImage({
+            data: images[i],
+            x: 0,
+            y: 0,
+            w: 10,
+            h: 5.625
+          });
+        }
+
+        await pptx.writeFile({ fileName: "Thuyet_Trinh_QPAN_DaiNam_2K.pptx" });
+        hideExportProgress();
+        showToast("Xuất file PowerPoint 2K (.pptx) thành công!");
+      } catch (err) {
+        console.error("Export PPTX 2K error:", err);
+        hideExportProgress();
+        showToast("Lỗi khi xuất PowerPoint: " + err.message);
+      }
+    }
+
+    /* ==========================================================================
+       EXPORT TO PDF (HIGH-FIDELITY 2K CANVAS PACKAGING)
+       ========================================================================== */
+    async function exportToPDF2K() {
+      const jspdfLib = window.jspdf?.jsPDF || window.jsPDF;
+      if (!jspdfLib) {
+        showToast("Thư viện jsPDF đang tải, vui lòng thử lại sau giây lát...");
+        return;
+      }
+      if (typeof html2canvas === 'undefined') {
+        showToast("Thư viện html2canvas đang tải, vui lòng thử lại sau giây lát...");
+        return;
+      }
+
+      showExportProgress("Đang Xuất File PDF (2K Siêu Nét)", "Đang chụp từng slide ở độ phân giải Canvas 2K siêu nét (2560x1440)...");
+
+      try {
+        const images = await captureAllSlides2K((cur, total, msg) => {
+          updateExportProgress(cur, total, msg);
+        });
+
+        updateExportProgress(11, 11, "Đang đóng gói tài liệu PDF 2K...");
+
+        // Create 16:9 PDF with 2560x1440 pixel dimensions
+        const pdf = new jspdfLib({
+          orientation: 'landscape',
+          unit: 'px',
+          format: [2560, 1440],
+          hotfixes: ['px_scaling']
+        });
+
+        for (let i = 0; i < images.length; i++) {
+          if (i > 0) {
+            pdf.addPage([2560, 1440], 'landscape');
+          }
+          pdf.addImage(images[i], 'PNG', 0, 0, 2560, 1440, undefined, 'FAST');
+        }
+
+        pdf.save("Thuyet_Trinh_QPAN_DaiNam_2K.pdf");
+        hideExportProgress();
+        showToast("Xuất file PDF 2K thành công!");
+      } catch (err) {
+        console.error("Export PDF 2K error:", err);
+        hideExportProgress();
+        showToast("Lỗi khi xuất PDF: " + err.message);
+      }
+    }
+
+    // Backwards compatibility aliases
+    const exportToPPTX = exportToPPTX2K;
+    const exportToPDF = exportToPDF2K;
+
+    /* ==========================================================================
+       INITIALIZATION
+       ========================================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      goToSlide(1);
+
+      setTimeout(() => {
+        showToast("Chào mừng đến bài thuyết trình GDQP-AN • Đại học Đại Nam!");
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
